@@ -2,12 +2,15 @@ package org.example.jpa.models;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity(name = "Author")
 @Table(name = "author")
 public class Author {
@@ -45,10 +48,11 @@ public class Author {
 
     private int age;
 
-    @Column(updatable = false,nullable = false)
-    private LocalDateTime createdAt;
 
-    @Column(insertable = false)
-    private LocalDateTime lastModified;
+    //@Column(updatable = false,nullable = false)
+    //private LocalDateTime createdAt;
+
+    //@Column(insertable = false)
+    //private LocalDateTime lastModified;
 
 }
