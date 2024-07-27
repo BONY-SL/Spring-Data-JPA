@@ -1,5 +1,6 @@
 package org.example.jpa;
 
+import com.github.javafaker.Faker;
 import org.example.jpa.models.Author;
 import org.example.jpa.models.Video;
 import org.example.jpa.repository.AuthorRepository;
@@ -21,20 +22,24 @@ public class JpaApplication {
                                                VideoRepository videoRepository){
 
         return args -> {
-            /*var author  = Author.builder()
-                    .firstName("Danidu")
-                    .lastName("Tharuka")
-                    .age(23)
-                    .email("danidutharuka678@gmail.com")
-                    .build();
-            authorRepository.save(author);*/
 
-            var video = Video.builder()
+/*            for(int i=1;i<=30;i++){
+
+                Faker faker =new Faker();
+                var author  = Author.builder()
+                        .firstName(faker.name().firstName())
+                        .lastName(faker.name().lastName())
+                        .age(faker.number().numberBetween(19,25))
+                        .email("danidutharuka678"+i+"@gmail.com")
+                        .build();
+                authorRepository.save(author);
+            }*/
+/*            var video = Video.builder()
                     .name("new video")
                     .length(10)
-                    .build();
+                    .build();*//*
 
-            videoRepository.save(video);
+            videoRepository.save(video);*/
         };
     }
 
