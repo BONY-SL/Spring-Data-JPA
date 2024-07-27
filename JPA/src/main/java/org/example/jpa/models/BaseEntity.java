@@ -22,7 +22,10 @@ public class BaseEntity {
     private Integer id;
 
     private LocalDateTime createdAt;
+
     private LocalDateTime lastModifiedAt;
+
     private String createdBy;
+
     private String lastModifiedBy;
 }

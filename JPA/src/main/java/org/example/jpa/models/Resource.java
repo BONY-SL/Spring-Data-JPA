@@ -5,15 +5,20 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
 @Entity(name = "Resource")
 @Table(name = "resource")
-public class Resource extends BaseEntity{
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@DiscriminatorColumn(name = "resource_type") for Single Table Strategy
+public class Resource {
 
+    @Id
+    @GeneratedValue
+    private Integer id;
 
     private String name;
 
