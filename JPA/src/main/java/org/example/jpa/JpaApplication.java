@@ -14,7 +14,7 @@ public class JpaApplication {
         SpringApplication.run(JpaApplication.class, args);
     }
 
-    @Bean
+   /* @Bean
     public CommandLineRunner commandLineRunner(AuthorRepository authorRepository){
 
         return args -> {
@@ -26,6 +26,6 @@ public class JpaApplication {
                     .build();
             authorRepository.save(author);
         };
-    }
+    }*/
 
 }

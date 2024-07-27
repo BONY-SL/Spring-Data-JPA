@@ -2,21 +2,23 @@ package org.example.jpa.models;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
+import java.util.List;
+
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 @Entity(name = "Author")
 @Table(name = "author")
-public class Author {
+public class Author extends BaseEntity{
 
-    @Id
-    @GeneratedValue/*(strategy = GenerationType.TABLE,
+    //@Id
+    //@GeneratedValue
+    /*(strategy = GenerationType.TABLE,
             generator = "author_id_gen"
     )*/
 
@@ -31,7 +33,7 @@ public class Author {
             valueColumnName = "id_value",
             allocationSize = 1
     )*/
-    private Integer id;
+    //private Integer id;
 
 
     @Column(name = "first_name")
@@ -47,6 +49,9 @@ public class Author {
 
 
     private int age;
+
+    @ManyToMany(mappedBy = "authors")
+    private List<Course> courses;
 
 
     //@Column(updatable = false,nullable = false)
